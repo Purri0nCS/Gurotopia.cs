@@ -5,11 +5,12 @@
 ENet.Library.Initialize();
 
 using ENet.Host server = new();
-ENet.Address address = new()
-{
-    Port = 17091
-};
+ENet.Address address = new() { Port = 17091 };
+
 server.Create(address, 50);
+
+Console.WriteLine("Server started on port " + address.Port);
+
 
 while (!Console.KeyAvailable)
 {
